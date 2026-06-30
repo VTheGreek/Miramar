@@ -1,5 +1,7 @@
 function NotFound() {
-    return()
+    return(
+        null
+    )
 }
 
 export default NotFound;
