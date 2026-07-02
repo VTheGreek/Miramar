@@ -24,16 +24,22 @@ function Navbar() {
         }
     ]
 
-    const links = navLinks.map(link => {
-        if (link.type === 'route') {
-            return <Link to={link.to}>
+    const routeLinks = navLinks.filter(
+        routeLink => routeLink.type === 'route'
+    )
+
+    const links = routeLinks.map(link => (
+                <li key={link.label}>
+                  <Link to={link.to}>
                         {link.label}
-                    </Link>
-        }
-    })
+                  </Link>
+                </li>
+    ))
     return(
         <nav>
-            {links}
+            <ul>
+                {links}
+            </ul>    
         </nav>
     )
 }
