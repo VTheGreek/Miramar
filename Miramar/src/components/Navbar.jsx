@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import logo from "../assets/logo/miramar-logo.png";
+import "../styles/Navbar.css";
 
 function Navbar() {
     const navLinks = [
@@ -36,10 +38,22 @@ function Navbar() {
                 </li>
     ))
     return(
-        <nav>
-            <ul>
+        <nav className="navbar">
+           <div className="navbar-logo">
+            <Link to='/'> 
+                <img src={logo} alt="Miramar Seacoast Logo"/>
+            </Link>
+           </div>
+
+           <div className="navbar-menu"> 
+              <ul>
                 {links}
-            </ul>    
+              </ul>
+           </div>
+
+           <div className="navbar-reserve"> 
+             <a href="tel:+306948969004">Reserve</a>
+           </div>
         </nav>
     )
 }
