@@ -1,10 +1,91 @@
 .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+
     display: flex;
     justify-content: space-between;
     align-items: center;
+    
+    padding: 1rem 2rem;
+
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(10px);
+
+    z-index: 1000;
+
+    box-sizing: border-box;
 }
 
 .navbar-logo img {
-    height: 60px;
-    width: 60px;
+    height: 65px;
+    width: auto;
+    display: block;
+}
+
+.navbar-menu ul {
+    display: flex;
+    align-items: center;
+
+    list-style-type: none;
+
+    margin: 0;
+    padding: 0;
+    
+    gap: 2rem;
+}
+
+.navbar-menu a {
+    text-decoration: none;
+
+    color: #163A5F;
+
+    font-size: 1rem;
+    font-weight: 600;
+
+    transition: .3s;
+}
+
+.navbar-menu a:hover {
+    color: #2F80ED;
+}
+
+   /* RESERVE BUTTON
+=========================== */ 
+
+.navbar-reserve a {
+    text-decoration: none;
+
+    background: #163A5F;
+    color: white;
+
+    padding: .8rem 1.6rem;
+
+    border-radius: 40px;
+
+    font-weight: 600;
+
+    transition: .3s;
+}
+
+.navbar-reserve a:hover {
+    background: #2F80ED;
+}
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media (max-width:768px){
+
+    .navbar{
+        padding: 1rem 1.5rem;
+    }
+
+    .navbar-menu{
+        display:none;
+    }
 }

@@ -5,22 +5,22 @@ import "../styles/Navbar.css";
 function Navbar() {
     const navLinks = [
         {
-            label: 'home',
+            label: 'Home',
             to: '/',
             type: 'route'
         },
         {
-            label: 'gallery',
+            label: 'Gallery',
             to: '#gallery',
             type: 'scroll'
         },
         {
-            label: 'menu',
+            label: 'Menu',
             to: '/menu',
             type: 'route'
         },
         {
-            label: 'contact',
+            label: 'Contact',
             to: '#contact',
             type: 'scroll'
         }
