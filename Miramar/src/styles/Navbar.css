@@ -12,7 +12,7 @@
     
     padding: 1rem 2rem;
 
-    background: rgba(255, 255, 255, 0.92);
+    background: transparent;
     backdrop-filter: blur(10px);
 
     z-index: 1000;
@@ -41,7 +41,7 @@
 .navbar-menu a {
     text-decoration: none;
 
-    color: #163A5F;
+   color: white;
 
     font-size: 1rem;
     font-weight: 600;
@@ -59,8 +59,9 @@
 .navbar-reserve a {
     text-decoration: none;
 
-    background: #163A5F;
-    color: white;
+   background: rgba(255,255,255,.15);
+   border: 1px solid white;
+   color: white;
 
     padding: .8rem 1.6rem;
 
@@ -72,7 +73,8 @@
 }
 
 .navbar-reserve a:hover {
-    background: #2F80ED;
+    background: white;
+    color: #163A5F;
 }
 
 /* ===========================
