@@ -1,3 +1,7 @@
+/* ===========================
+   NAVBAR
+=========================== */
+
 .navbar {
     position: fixed;
     top: 0;
@@ -5,89 +9,185 @@
 
     width: 100%;
 
-
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
-    padding: 1rem 2rem;
 
-    background: transparent;
-    backdrop-filter: blur(10px);
+    padding: 2rem 5rem;
 
     z-index: 1000;
+
+    transition: all .35s ease;
 
     box-sizing: border-box;
 }
 
-.navbar-logo img {
-    height: 65px;
-    width: auto;
-    display: block;
+/* ===========================
+   BRAND
+=========================== */
+
+.navbar-brand {
+    text-decoration: none;
+    color: white;
 }
 
-.navbar-menu ul {
+.navbar-brand h1 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 2.4rem;
+    font-weight: 500;
+    letter-spacing: .25rem;
+    margin: 0;
+}
+
+.navbar-brand span {
+    display: block;
+
+    text-align: center;
+
+    font-family: "Inter", sans-serif;
+    font-size: .75rem;
+
+    letter-spacing: .45rem;
+
+    margin-top: -.35rem;
+}
+
+/* ===========================
+   MENU
+=========================== */
+
+.navbar-menu {
     display: flex;
+
     align-items: center;
 
-    list-style-type: none;
+    gap: 3rem;
+
+    list-style: none;
 
     margin: 0;
     padding: 0;
-    
-    gap: 2rem;
 }
 
 .navbar-menu a {
+    position: relative;
+
+    color: white;
+
     text-decoration: none;
 
-   color: white;
+    font-family: "Inter", sans-serif;
 
-    font-size: 1rem;
-    font-weight: 600;
+    text-transform: uppercase;
 
-    transition: .3s;
+    letter-spacing: .15rem;
+
+    font-size: .9rem;
+
+    transition: color .3s ease;
+}
+
+.navbar-menu a::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -8px;
+
+    width: 0%;
+
+    height: 2px;
+
+    background: #d7b98c;
+
+    transition: width .3s ease;
+
 }
 
 .navbar-menu a:hover {
-    color: #2F80ED;
+
+    color: #d7b98c;
+
 }
 
-   /* RESERVE BUTTON
-=========================== */ 
+.navbar-menu a:hover::after {
 
-.navbar-reserve a {
+    width: 100%;
+
+}
+
+/* ===========================
+   BUTTON
+=========================== */
+
+.navbar-reserve {
+
     text-decoration: none;
 
-   background: rgba(255,255,255,.15);
-   border: 1px solid white;
-   color: white;
+    color: white;
 
-    padding: .8rem 1.6rem;
+    font-family: "Inter", sans-serif;
 
-    border-radius: 40px;
+    border: 1px solid rgba(255,255,255,.7);
 
-    font-weight: 600;
+    padding: .9rem 2rem;
 
-    transition: .3s;
+    border-radius: 999px;
+
+    backdrop-filter: blur(12px);
+
+    transition: .35s ease;
+
 }
 
-.navbar-reserve a:hover {
+.navbar-reserve:hover {
+
     background: white;
-    color: #163A5F;
+
+    color: #0c2238;
+
 }
 
 /* ===========================
    MOBILE
 =========================== */
 
-@media (max-width:768px){
+@media (max-width:992px){
 
     .navbar{
-        padding: 1rem 1.5rem;
+
+        padding:1.5rem 2rem;
+
     }
 
     .navbar-menu{
+
         display:none;
+
     }
+
+}
+
+@media (max-width:576px){
+
+    .navbar-brand h1{
+
+        font-size:1.8rem;
+
+    }
+
+    .navbar-brand span{
+
+        font-size:.6rem;
+
+    }
+
+    .navbar-reserve{
+
+        display:none;
+
+    }
+
 }

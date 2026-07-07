@@ -1,61 +1,67 @@
 import { Link } from "react-router-dom";
-import logo from "../assets/logo/miramar-logo.png";
 import "../styles/Navbar.css";
 
 function Navbar() {
     const navLinks = [
         {
-            label: 'Home',
-            to: '/',
-            type: 'route'
+            label: "Home",
+            to: "/",
+            kind: "route",
         },
         {
-            label: 'Gallery',
-            to: '#gallery',
-            type: 'scroll'
+            label: "Gallery",
+            to: "#gallery",
+            kind: "scroll",
         },
         {
-            label: 'Menu',
-            to: '/menu',
-            type: 'route'
+            label: "Menu",
+            to: "/menu",
+            kind: "route",
         },
         {
-            label: 'Contact',
-            to: '#contact',
-            type: 'scroll'
-        }
-    ]
+            label: "Contact",
+            to: "#contact",
+            kind: "scroll",
+        },
+    ];
 
-    const routeLinks = navLinks.filter(
-        routeLink => routeLink.type === 'route'
-    )
-
-    const links = routeLinks.map(link => (
-                <li key={link.label}>
-                  <Link to={link.to}>
-                        {link.label}
-                  </Link>
-                </li>
-    ))
-    return(
+    return (
         <nav className="navbar">
-           <div className="navbar-logo">
-            <Link to='/'> 
-                <img src={logo} alt="Miramar Seacoast Logo"/>
+
+            <Link to="/" className="navbar-brand">
+                <h1>MIRAMAR</h1>
+                <span>SEACOAST</span>
             </Link>
-           </div>
 
-           <div className="navbar-menu"> 
-              <ul>
-                {links}
-              </ul>
-           </div>
+            <ul className="navbar-menu">
 
-           <div className="navbar-reserve"> 
-             <a href="tel:+306948969004">Reserve</a>
-           </div>
+                {navLinks.map((link) => (
+                    <li key={link.label}>
+
+                        {link.kind === "route" ? (
+                            <Link to={link.to}>
+                                {link.label}
+                            </Link>
+                        ) : (
+                            <a href={link.to}>
+                                {link.label}
+                            </a>
+                        )}
+
+                    </li>
+                ))}
+
+            </ul>
+
+            <a
+                href="tel:+306948969004"
+                className="navbar-reserve"
+            >
+                Reserve a Table
+            </a>
+
         </nav>
-    )
+    );
 }
 
 export default Navbar;
