@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import "../styles/Navbar.css";
+import { MENU_URL } from "../constants/links";
+import { PHONE_NUMBER } from "../constants/phone";
 
 function Navbar() {
     const navLinks = [
@@ -15,8 +17,8 @@ function Navbar() {
         },
         {
             label: "Menu",
-            to: "/menu",
-            kind: "route",
+            to: MENU_URL,
+            kind: "external",
         },
         {
             label: "Contact",
@@ -34,27 +36,37 @@ function Navbar() {
             </Link>
 
             <ul className="navbar-menu">
-
                 {navLinks.map((link) => (
                     <li key={link.label}>
-
-                        {link.kind === "route" ? (
+                    
+                        {link.kind === "route" && (
                             <Link to={link.to}>
                                 {link.label}
                             </Link>
-                        ) : (
+                        )}
+
+                        {link.kind === "scroll" && (
                             <a href={link.to}>
+                                {link.label}
+                            </a>
+                        )}
+
+                        {link.kind === "external" && (
+                            <a
+                                href={link.to}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
                                 {link.label}
                             </a>
                         )}
 
                     </li>
                 ))}
-
             </ul>
 
             <a
-                href="tel:+306948969004"
+                href={`tel:${PHONE_NUMBER}`}
                 className="navbar-reserve"
             >
                 Reserve a Table

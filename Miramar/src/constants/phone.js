@@ -1,0 +1,1 @@
+export const PHONE_NUMBER = "+306948969004";

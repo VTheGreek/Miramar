@@ -1,0 +1,1 @@
+export const MENU_URL = "https://www.google.com"
