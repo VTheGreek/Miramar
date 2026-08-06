@@ -1,0 +1,219 @@
+/* ===========================
+   CONTACT
+=========================== */
+
+.contact {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    min-height: 650px;
+
+    background: #f7f3ec;
+}
+
+/* ===========================
+   CONTENT
+=========================== */
+
+.contact-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 7rem 10%;
+}
+
+.contact-subtitle {
+    font-family: "Inter", sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+
+    letter-spacing: 0.3rem;
+    text-transform: uppercase;
+
+    color: #b08b57;
+
+    margin-bottom: 1rem;
+}
+
+.contact-title {
+    max-width: 550px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 3.5rem;
+    font-weight: 500;
+    line-height: 1.05;
+
+    color: #0d2238;
+
+    margin: 0 0 1.5rem;
+}
+
+.contact-description {
+    max-width: 550px;
+
+    font-family: "Inter", sans-serif;
+    font-size: 1rem;
+    line-height: 1.8;
+
+    color: #646464;
+
+    margin-bottom: 3rem;
+}
+
+/* ===========================
+   CONTACT DETAILS
+=========================== */
+
+.contact-details {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 2rem;
+
+    margin-bottom: 3rem;
+}
+
+.contact-details div {
+    display: flex;
+    flex-direction: column;
+
+    gap: 0.4rem;
+}
+
+.contact-details span {
+    font-family: "Inter", sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+
+    letter-spacing: 0.12rem;
+    text-transform: uppercase;
+
+    color: #b08b57;
+}
+
+.contact-details p,
+.contact-details a {
+    font-family: "Inter", sans-serif;
+    font-size: 0.9rem;
+
+    color: #0d2238;
+
+    text-decoration: none;
+
+    margin: 0;
+}
+
+.contact-details a {
+    transition: color 0.3s ease;
+}
+
+.contact-details a:hover {
+    color: #b08b57;
+}
+
+/* ===========================
+   RESERVATION BUTTON
+=========================== */
+
+.contact-reserve {
+    align-self: flex-start;
+
+    display: inline-block;
+
+    padding: 1rem 2.2rem;
+
+    border: 1px solid #0d2238;
+    border-radius: 999px;
+
+    background: #0d2238;
+
+    color: white;
+
+    font-family: "Inter", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+
+    letter-spacing: 0.05rem;
+
+    text-decoration: none;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease;
+}
+
+.contact-reserve:hover {
+    background: transparent;
+    color: #0d2238;
+}
+
+/* ===========================
+   MAP
+=========================== */
+
+.contact-map {
+    width: 100%;
+    min-height: 650px;
+
+    background: #0d2238;
+}
+
+.contact-map iframe {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    min-height: 650px;
+
+    border: 0;
+
+    filter: saturate(0.8) contrast(0.95);
+}
+
+/* ===========================
+   TABLET
+=========================== */
+
+@media (max-width: 992px) {
+
+    .contact {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-content {
+        padding: 6rem 8%;
+    }
+
+    .contact-map,
+    .contact-map iframe {
+        min-height: 450px;
+    }
+}
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media (max-width: 576px) {
+
+    .contact-content {
+        padding: 5rem 1.5rem;
+    }
+
+    .contact-title {
+        font-size: 2.5rem;
+    }
+
+    .contact-details {
+        grid-template-columns: 1fr;
+
+        gap: 1.5rem;
+    }
+
+    .contact-map,
+    .contact-map iframe {
+        min-height: 350px;
+    }
+}
