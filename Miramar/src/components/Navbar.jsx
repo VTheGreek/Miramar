@@ -2,8 +2,24 @@ import { Link } from "react-router-dom";
 import "../styles/Navbar.css";
 import { MENU_URL } from "../constants/links";
 import { PHONE_NUMBER } from "../constants/phone";
+import { useEffect, useState } from "react";
 
 function Navbar() {
+
+    const [scrolled, setScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+        setScrolled(window.scrollY > 80);
+        };
+
+        window.addEventListener("scroll", handleScroll);
+
+        return () => {
+        window.removeEventListener("scroll", handleScroll);
+        };
+        }, []);
+
     const navLinks = [
         {
             label: "Home",
@@ -28,7 +44,7 @@ function Navbar() {
     ];
 
     return (
-        <nav className="navbar">
+        <nav className={`navbar ${scrolled ? "navbar-scrolled" : ""}`}>
 
             <Link to="/" className="navbar-brand">
                 <h1>MIRAMAR</h1>

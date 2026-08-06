@@ -1,0 +1,224 @@
+/* ===========================
+   FOOTER
+=========================== */
+
+.footer {
+    padding: 6rem 8% 2rem;
+
+    background: #071521;
+    color: #ffffff;
+}
+
+/* ===========================
+   TOP
+=========================== */
+
+.footer-top {
+    display: grid;
+    grid-template-columns: 1.5fr 0.7fr 0.8fr 1.2fr;
+
+    gap: 4rem;
+
+    padding-bottom: 4rem;
+}
+
+/* ===========================
+   BRAND
+=========================== */
+
+.footer-brand a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.footer-brand h2 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 2.5rem;
+    font-weight: 500;
+
+    letter-spacing: 0.25rem;
+
+    color: #ffffff;
+
+    margin: 0;
+}
+
+.footer-brand span {
+    display: block;
+
+    width: fit-content;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 0.65rem;
+
+    letter-spacing: 0.45rem;
+
+    margin-left: 0.15rem;
+}
+
+.footer-brand p {
+    max-width: 350px;
+
+    margin-top: 1.8rem;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 0.9rem;
+    line-height: 1.8;
+
+    color: #aeb7bf;
+}
+
+/* ===========================
+   LINKS
+=========================== */
+
+.footer-links,
+.footer-contact {
+    display: flex;
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 0.9rem;
+}
+
+.footer h3 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 1.4rem;
+    font-weight: 500;
+
+    margin: 0 0 0.7rem;
+
+    color: #ffffff;
+}
+
+.footer-links a,
+.footer-contact a {
+    font-family: "Inter", sans-serif;
+
+    font-size: 0.85rem;
+
+    color: #aeb7bf;
+
+    text-decoration: none;
+
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover,
+.footer-contact a:hover {
+    color: #c9a66b;
+}
+
+/* ===========================
+   RESERVATION
+=========================== */
+
+.footer-reservation {
+    display: flex;
+    flex-direction: column;
+
+    align-items: flex-start;
+}
+
+.footer-reservation > span {
+    font-family: "Inter", sans-serif;
+
+    font-size: 0.7rem;
+
+    letter-spacing: 0.25rem;
+
+    color: #c9a66b;
+
+    margin-bottom: 0.8rem;
+}
+
+.footer-reservation h3 {
+    font-size: 2rem;
+
+    margin-bottom: 1.5rem;
+}
+
+.footer-reserve-button {
+    display: inline-block;
+
+    padding: 0.9rem 1.8rem;
+
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 999px;
+
+    color: #ffffff;
+
+    font-family: "Inter", sans-serif;
+    font-size: 0.85rem;
+
+    text-decoration: none;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease;
+}
+
+.footer-reserve-button:hover {
+    background: #ffffff;
+    color: #071521;
+}
+
+/* ===========================
+   BOTTOM
+=========================== */
+
+.footer-bottom {
+    padding-top: 2rem;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.footer-bottom p {
+    font-family: "Inter", sans-serif;
+
+    font-size: 0.75rem;
+
+    color: #7f8b95;
+}
+
+/* ===========================
+   TABLET
+=========================== */
+
+@media (max-width: 992px) {
+
+    .footer-top {
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media (max-width: 576px) {
+
+    .footer {
+        padding: 5rem 1.5rem 2rem;
+    }
+
+    .footer-top {
+        grid-template-columns: 1fr;
+
+        gap: 3rem;
+    }
+
+    .footer-brand h2 {
+        font-size: 2rem;
+    }
+
+    .footer-reservation h3 {
+        font-size: 1.7rem;
+    }
+}

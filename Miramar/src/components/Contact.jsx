@@ -52,7 +52,13 @@ function Contact() {
             </div>
 
             <div className="contact-map">
-                {/* Google Map will go here */}
+                <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1043.6272382707434!2d23.877363587538294!3d40.40179225545166!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a8c5047598e723%3A0x27b7cabff1cf6c39!2sMiramar%20Seacoast!5e0!3m2!1sel!2sgr!4v1786027165022!5m2!1sel!2sgr"
+                title="Miramar Seacoast location"
+                loading="lazy"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+                />
             </div>
         </section>
     );
