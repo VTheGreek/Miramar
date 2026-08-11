@@ -1,0 +1,255 @@
+/* ===========================
+   MENU PAGE
+=========================== */
+
+.menu-page {
+    min-height: 100vh;
+
+    padding: 10rem 8% 6rem;
+
+    background: #f7f3ec;
+
+    color: #0d2238;
+}
+
+/* ===========================
+   HEADER
+=========================== */
+
+.menu-header {
+    max-width: 750px;
+
+    margin: 0 auto 6rem;
+
+    text-align: center;
+}
+
+.menu-header span {
+    display: inline-block;
+
+    margin-bottom: 1rem;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 0.8rem;
+    font-weight: 500;
+
+    letter-spacing: 0.3rem;
+
+    color: #b08b57;
+}
+
+.menu-header h1 {
+    margin: 0 0 1.2rem;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 5rem;
+    font-weight: 500;
+
+    line-height: 1;
+
+    color: #0d2238;
+}
+
+.menu-header p {
+    max-width: 600px;
+
+    margin: 0 auto;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 1rem;
+
+    line-height: 1.8;
+
+    color: #666;
+}
+
+/* ===========================
+   MAIN MENU SECTION
+=========================== */
+
+.menu-section {
+    max-width: 1000px;
+
+    margin: 0 auto;
+}
+
+.menu-section > h2 {
+    margin-bottom: 4rem;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 3rem;
+    font-weight: 500;
+
+    text-align: center;
+
+    color: #0d2238;
+}
+
+/* ===========================
+   CATEGORY
+=========================== */
+
+.menu-category {
+    margin-bottom: 5rem;
+}
+
+.menu-category-title {
+    display: flex;
+
+    align-items: center;
+
+    gap: 1.5rem;
+
+    margin-bottom: 2rem;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 2rem;
+    font-weight: 500;
+
+    color: #0d2238;
+}
+
+.menu-category-title::after {
+    content: "";
+
+    flex: 1;
+
+    height: 1px;
+
+    background: #d8cbb8;
+}
+
+/* ===========================
+   MENU ITEMS
+=========================== */
+
+.menu-items {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 1.8rem;
+}
+
+.menu-item {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+    gap: 3rem;
+
+    padding-bottom: 1.5rem;
+
+    border-bottom: 1px solid #e2dcd2;
+}
+
+.menu-item-info {
+    flex: 1;
+}
+
+.menu-item h3 {
+    margin: 0 0 0.4rem;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 1.5rem;
+    font-weight: 600;
+
+    color: #0d2238;
+}
+
+.menu-item p {
+    max-width: 700px;
+
+    margin: 0;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 0.85rem;
+
+    line-height: 1.7;
+
+    color: #777;
+}
+
+.menu-item-price {
+    flex-shrink: 0;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 0.95rem;
+    font-weight: 600;
+
+    color: #b08b57;
+
+    white-space: nowrap;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media (max-width: 768px) {
+
+    .menu-page {
+        padding: 8rem 1.5rem 4rem;
+    }
+
+    .menu-header {
+        margin-bottom: 4rem;
+    }
+
+    .menu-header h1 {
+        font-size: 3.5rem;
+    }
+
+    .menu-section > h2 {
+        font-size: 2.5rem;
+    }
+
+    .menu-category-title {
+        font-size: 1.7rem;
+    }
+
+    .menu-item {
+        gap: 1.5rem;
+    }
+
+}
+
+@media (max-width: 576px) {
+
+    .menu-header h1 {
+        font-size: 3rem;
+    }
+
+    .menu-header p {
+        font-size: 0.9rem;
+    }
+
+    .menu-category {
+        margin-bottom: 3.5rem;
+    }
+
+    .menu-category-title {
+        font-size: 1.5rem;
+    }
+
+    .menu-item {
+        flex-direction: column;
+
+        gap: 0.5rem;
+    }
+
+    .menu-item-price {
+        align-self: flex-start;
+    }
+
+}
