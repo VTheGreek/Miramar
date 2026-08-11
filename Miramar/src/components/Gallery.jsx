@@ -42,7 +42,7 @@ function Gallery() {
 
                 {galleryImages.map((image, index) => (
 
-                    <div
+                    <div 
                         className="gallery-card"
                         key={index}
                     >
