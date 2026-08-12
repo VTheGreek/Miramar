@@ -1,0 +1,43 @@
+.language-switcher {
+    display: flex;
+
+    align-items: center;
+
+    gap: 0.45rem;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 0.75rem;
+
+    letter-spacing: 0.12rem;
+}
+
+.language-switcher button {
+    padding: 0;
+
+    border: none;
+
+    background: transparent;
+
+    color: rgba(255, 255, 255, 0.55);
+
+    font: inherit;
+
+    letter-spacing: inherit;
+
+    cursor: pointer;
+
+    transition: color 0.3s ease;
+}
+
+.language-switcher button:hover {
+    color: #d7b98c;
+}
+
+.language-switcher button.active {
+    color: #d7b98c;
+}
+
+.language-switcher > span {
+    color: rgba(255, 255, 255, 0.35);
+}

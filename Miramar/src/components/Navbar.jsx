@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import "../styles/Navbar.css";
 import { PHONE_NUMBER } from "../constants/phone";
 import { useEffect, useState } from "react";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 function Navbar() {
     const [scrolled, setScrolled] = useState(false);
@@ -127,6 +128,8 @@ function Navbar() {
                 ))}
 
             </ul>
+
+            <LanguageSwitcher />
 
             <a
                 href={`tel:${PHONE_NUMBER}`}
