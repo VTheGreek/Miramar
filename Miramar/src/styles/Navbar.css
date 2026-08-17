@@ -1,9 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&display=swap");
+
 /* ===========================
    NAVBAR
 =========================== */
 
 .navbar {
     position: fixed;
+
     top: 0;
     left: 0;
 
@@ -17,10 +20,14 @@
 
     z-index: 1000;
 
-    transition: all .35s ease;
+    transition:
+        background 0.35s ease,
+        padding 0.35s ease,
+        box-shadow 0.35s ease;
 
     box-sizing: border-box;
 }
+
 
 /* ===========================
    BRAND
@@ -28,32 +35,40 @@
 
 .navbar-brand {
     text-decoration: none;
+
     color: white;
+
+    flex-shrink: 0;
 }
 
 .navbar-brand h1 {
+    margin: 0;
+
     font-family: "Cormorant Garamond", serif;
+
     font-size: 2.4rem;
     font-weight: 500;
-    letter-spacing: .25rem;
-    margin: 0;
+
+    letter-spacing: 0.25rem;
 }
 
 .navbar-brand span {
     display: block;
 
+    margin-top: -0.35rem;
+
     text-align: center;
 
     font-family: "Inter", sans-serif;
-    font-size: .75rem;
 
-    letter-spacing: .45rem;
+    font-size: 0.75rem;
 
-    margin-top: -.35rem;
+    letter-spacing: 0.45rem;
 }
 
+
 /* ===========================
-   MENU
+   DESKTOP NAVIGATION
 =========================== */
 
 .navbar-menu {
@@ -63,10 +78,10 @@
 
     gap: 3rem;
 
-    list-style: none;
-
     margin: 0;
     padding: 0;
+
+    list-style: none;
 }
 
 .navbar-menu a {
@@ -80,15 +95,14 @@
 
     text-transform: uppercase;
 
-    letter-spacing: .15rem;
+    letter-spacing: 0.15rem;
 
-    font-size: .9rem;
+    font-size: 0.9rem;
 
-    transition: color .3s ease;
+    transition: color 0.3s ease;
 }
 
 .navbar-menu a::after {
-
     content: "";
 
     position: absolute;
@@ -96,27 +110,23 @@
     left: 0;
     bottom: -8px;
 
-    width: 0%;
+    width: 0;
 
     height: 2px;
 
     background: #d7b98c;
 
-    transition: width .3s ease;
-
+    transition: width 0.3s ease;
 }
 
 .navbar-menu a:hover {
-
     color: #d7b98c;
-
 }
 
 .navbar-menu a:hover::after {
-
     width: 100%;
-
 }
+
 
 /* ===========================
    MENU DROPDOWN
@@ -128,7 +138,9 @@
 
 .navbar-dropdown-button {
     display: flex;
+
     align-items: center;
+
     gap: 0.35rem;
 
     padding: 0;
@@ -142,10 +154,12 @@
     color: white;
 
     font-family: "Inter", sans-serif;
+
     font-size: 0.9rem;
     font-weight: 400;
 
     text-transform: uppercase;
+
     letter-spacing: 0.15rem;
 
     cursor: pointer;
@@ -169,14 +183,11 @@
     transform: rotate(180deg);
 }
 
-/* ===========================
-   DROPDOWN MENU
-=========================== */
-
 .navbar-dropdown {
     position: absolute;
 
     top: calc(100% + 1.2rem);
+
     left: 50%;
 
     transform: translateX(-50%);
@@ -197,7 +208,7 @@
     box-shadow:
         0 15px 40px rgba(0, 0, 0, 0.25);
 
-    z-index: 1000;
+    z-index: 1100;
 }
 
 .navbar-dropdown a {
@@ -208,9 +219,8 @@
     color: white;
 
     font-family: "Inter", sans-serif;
-    font-size: 0.85rem;
 
-    text-decoration: none;
+    font-size: 0.85rem;
 
     text-transform: none;
 
@@ -218,9 +228,15 @@
 
     text-align: left;
 
+    text-decoration: none;
+
     transition:
         background 0.25s ease,
         color 0.25s ease;
+}
+
+.navbar-dropdown a::after {
+    display: none;
 }
 
 .navbar-dropdown a:hover {
@@ -228,6 +244,58 @@
 
     color: #d7b98c;
 }
+
+
+/* ===========================
+   LANGUAGE SWITCHER
+=========================== */
+
+.navbar-language {
+    flex-shrink: 0;
+}
+
+
+/* ===========================
+   RESERVATION BUTTON
+=========================== */
+
+.navbar-reserve {
+    display: inline-block;
+
+    padding: 0.9rem 2rem;
+
+    border: 1px solid rgba(255, 255, 255, 0.7);
+
+    border-radius: 999px;
+
+    color: white;
+
+    font-family: "Inter", sans-serif;
+
+    text-decoration: none;
+
+    white-space: nowrap;
+
+    backdrop-filter: blur(12px);
+
+    transition:
+        background 0.35s ease,
+        color 0.35s ease,
+        border-color 0.35s ease;
+}
+
+.navbar-reserve:hover {
+    background: white;
+
+    color: #0c2238;
+
+    border-color: white;
+}
+
+
+/* ===========================
+   SCROLLED NAVBAR
+=========================== */
 
 .navbar-scrolled {
     background: rgba(7, 21, 33, 0.95);
@@ -238,79 +306,254 @@
     padding-top: 1.2rem;
     padding-bottom: 1.2rem;
 
-    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.15);
+    box-shadow:
+        0 5px 30px rgba(0, 0, 0, 0.15);
 }
+
 
 /* ===========================
-   BUTTON
+   MOBILE TOGGLE
 =========================== */
 
-.navbar-reserve {
+.navbar-toggle {
+    display: none;
 
-    text-decoration: none;
+    width: 32px;
+    height: 28px;
 
-    color: white;
+    padding: 0;
 
-    font-family: "Inter", sans-serif;
+    border: none;
 
-    border: 1px solid rgba(255,255,255,.7);
+    background: transparent;
 
-    padding: .9rem 2rem;
+    cursor: pointer;
 
-    border-radius: 999px;
+    flex-direction: column;
 
-    backdrop-filter: blur(12px);
-
-    transition: .35s ease;
-
+    justify-content: space-between;
 }
 
-.navbar-reserve:hover {
+.navbar-toggle span {
+    display: block;
+
+    width: 100%;
+    height: 1px;
 
     background: white;
 
-    color: #0c2238;
-
+    transition:
+        transform 0.3s ease,
+        opacity 0.3s ease;
 }
+
+
+/* Hamburger → X */
+
+.navbar-toggle.open span:nth-child(1) {
+    transform: translateY(13px) rotate(45deg);
+}
+
+.navbar-toggle.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.navbar-toggle.open span:nth-child(3) {
+    transform: translateY(-13px) rotate(-45deg);
+}
+
+
+/* ===========================
+   MOBILE MENU
+=========================== */
+
+.mobile-menu {
+    display: none;
+}
+
+
+/* ===========================
+   TABLET
+=========================== */
+
+@media (max-width: 1100px) {
+
+    .navbar {
+        padding-left: 2.5rem;
+        padding-right: 2.5rem;
+    }
+
+    .navbar-menu {
+        gap: 1.8rem;
+    }
+
+    .navbar-reserve {
+        padding: 0.8rem 1.4rem;
+    }
+}
+
 
 /* ===========================
    MOBILE
 =========================== */
 
-@media (max-width:992px){
+@media (max-width: 992px) {
 
-    .navbar{
-
-        padding:1.5rem 2rem;
-
+    .navbar {
+        padding: 1.5rem 2rem;
     }
 
-    .navbar-menu{
+    /* Hide desktop navigation */
 
-        display:none;
+    .navbar-menu {
+        display: none;
+    }
 
+    /* Hide desktop language */
+
+    .navbar-language {
+        display: none;
+    }
+
+    /* Hide desktop reservation */
+
+    .navbar-reserve {
+        display: none;
+    }
+
+    /* Show hamburger */
+
+    .navbar-toggle {
+        display: flex;
+
+        position: relative;
+
+        z-index: 1200;
+    }
+
+    /* Mobile overlay */
+
+    .mobile-menu {
+        position: fixed;
+
+        inset: 0;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        justify-content: center;
+
+        gap: 2rem;
+
+        padding: 7rem 2rem 3rem;
+
+        background: rgba(7, 21, 33, 0.98);
+
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+
+        z-index: 1100;
+    }
+
+    .mobile-menu > a {
+        color: white;
+
+        font-family: "Inter", sans-serif;
+
+        font-size: 1rem;
+
+        text-transform: uppercase;
+
+        letter-spacing: 0.2rem;
+
+        text-decoration: none;
+
+        transition: color 0.3s ease;
+    }
+
+    .mobile-menu > a:hover {
+        color: #d7b98c;
+    }
+
+    /* Language switcher inside mobile menu */
+
+    .mobile-menu .language-switcher {
+        margin-top: 1rem;
+    }
+
+    /* Divider */
+
+    .mobile-menu-divider {
+        width: 50px;
+
+        height: 1px;
+
+        background: rgba(215, 185, 140, 0.5);
+
+        margin: 0.5rem 0;
+    }
+
+    /* Mobile reservation */
+
+    .mobile-menu .mobile-menu-reserve {
+        margin-top: 0.5rem;
+
+        padding: 0.9rem 2rem;
+
+        border: 1px solid rgba(215, 185, 140, 0.7);
+
+        border-radius: 999px;
+
+        color: #d7b98c;
+    }
+
+    .mobile-menu .mobile-menu-reserve:hover {
+        background: #d7b98c;
+
+        color: #071521;
     }
 
 }
 
-@media (max-width:576px){
 
-    .navbar-brand h1{
+/* ===========================
+   SMALL MOBILE
+=========================== */
 
-        font-size:1.8rem;
+@media (max-width: 576px) {
 
+    .navbar {
+        padding: 1.2rem 1.5rem;
     }
 
-    .navbar-brand span{
-
-        font-size:.6rem;
-
+    .navbar-brand h1 {
+        font-size: 1.8rem;
     }
 
-    .navbar-reserve{
+    .navbar-brand span {
+        font-size: 0.6rem;
 
-        display:none;
+        letter-spacing: 0.35rem;
+    }
 
+    .navbar-toggle {
+        width: 28px;
+        height: 24px;
+    }
+
+    .navbar-toggle.open span:nth-child(1) {
+        transform: translateY(11px) rotate(45deg);
+    }
+
+    .navbar-toggle.open span:nth-child(3) {
+        transform: translateY(-11px) rotate(-45deg);
+    }
+
+    .mobile-menu {
+        gap: 1.7rem;
     }
 
 }
