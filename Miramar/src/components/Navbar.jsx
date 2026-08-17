@@ -2,11 +2,14 @@ import { Link } from "react-router-dom";
 import "../styles/Navbar.css";
 import { PHONE_NUMBER } from "../constants/phone";
 import { useEffect, useState } from "react";
+import { useLanguage } from "../context/LanguageContext";
 import LanguageSwitcher from "./LanguageSwitcher";
 
 function Navbar() {
     const [scrolled, setScrolled] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
+
+    const { language } = useLanguage();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -20,23 +23,41 @@ function Navbar() {
         };
     }, []);
 
+    const content = {
+        en: {
+            home: "Home",
+            gallery: "Gallery",
+            menu: "Menu",
+            contact: "Contact",
+            reserve: "Reserve a Table",
+        },
+
+        gr: {
+            home: "Αρχική",
+            gallery: "Gallery",
+            menu: "Μενού",
+            contact: "Επικοινωνία",
+            reserve: "Κάντε κράτηση",
+        },
+    };
+
     const navLinks = [
         {
-            label: "Home",
+            label: content[language].home,
             to: "/",
             kind: "route",
         },
         {
-            label: "Gallery",
+            label: content[language].gallery,
             to: "#gallery",
             kind: "scroll",
         },
         {
-            label: "Menu",
+            label: content[language].menu,
             kind: "dropdown",
         },
         {
-            label: "Contact",
+            label: content[language].contact,
             to: "#contact",
             kind: "scroll",
         },
@@ -55,21 +76,18 @@ function Navbar() {
                 {navLinks.map((link) => (
                     <li key={link.label}>
 
-                        {/* Regular route */}
                         {link.kind === "route" && (
                             <Link to={link.to}>
                                 {link.label}
                             </Link>
                         )}
 
-                        {/* Scroll link */}
                         {link.kind === "scroll" && (
                             <a href={link.to}>
                                 {link.label}
                             </a>
                         )}
 
-                        {/* Menu dropdown */}
                         {link.kind === "dropdown" && (
                             <div className="navbar-dropdown-wrapper">
 
@@ -87,7 +105,7 @@ function Navbar() {
                                                 : "arrow"
                                         }
                                     >
-                                         ⌄
+                                        ⌄
                                     </span>
                                 </button>
 
@@ -135,7 +153,7 @@ function Navbar() {
                 href={`tel:${PHONE_NUMBER}`}
                 className="navbar-reserve"
             >
-                Reserve a Table
+                {content[language].reserve}
             </a>
 
         </nav>

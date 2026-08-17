@@ -1,34 +1,92 @@
 import { Link } from "react-router-dom";
+import { useLanguage } from "../context/LanguageContext";
 import { PHONE_NUMBER } from "../constants/phone";
 import "../styles/Footer.css";
 
 function Footer() {
+    const { language } = useLanguage();
+
+    const content = {
+        en: {
+            description:
+                "Mediterranean flavors, handcrafted cocktails and unforgettable moments by the sea.",
+
+            explore: "Explore",
+            story: "Our Story",
+            gallery: "Gallery",
+            contact: "Contact",
+
+            connect: "Connect",
+
+            reservations: "RESERVATIONS",
+            reservationTitle: "Join us by the sea.",
+            reserve: "Reserve a Table",
+
+            rights: "All rights reserved.",
+        },
+
+        gr: {
+            description:
+                "Μεσογειακές γεύσεις, signature cocktails και αξέχαστες στιγμές δίπλα στη θάλασσα.",
+
+            explore: "Εξερευνήστε",
+            story: "Η Ιστορία μας",
+            gallery: "Gallery",
+            contact: "Επικοινωνία",
+
+            connect: "Επικοινωνία",
+
+            reservations: "ΚΡΑΤΗΣΕΙΣ",
+            reservationTitle: "Ελάτε κοντά στη θάλασσα.",
+            reserve: "Κάντε κράτηση",
+
+            rights: "Με επιφύλαξη παντός δικαιώματος.",
+        },
+    };
+
     return (
         <footer className="footer">
+
             <div className="footer-top">
 
                 <div className="footer-brand">
+
                     <Link to="/">
                         <h2>MIRAMAR</h2>
                         <span>SEACOAST</span>
                     </Link>
 
                     <p>
-                        Mediterranean flavors, handcrafted cocktails
-                        and unforgettable moments by the sea.
+                        {content[language].description}
                     </p>
+
                 </div>
 
                 <div className="footer-links">
-                    <h3>Explore</h3>
 
-                    <a href="#about">Our Story</a>
-                    <a href="#gallery">Gallery</a>
-                    <a href="#contact">Contact</a>
+                    <h3>
+                        {content[language].explore}
+                    </h3>
+
+                    <a href="#about">
+                        {content[language].story}
+                    </a>
+
+                    <a href="#gallery">
+                        {content[language].gallery}
+                    </a>
+
+                    <a href="#contact">
+                        {content[language].contact}
+                    </a>
+
                 </div>
 
                 <div className="footer-contact">
-                    <h3>Connect</h3>
+
+                    <h3>
+                        {content[language].connect}
+                    </h3>
 
                     <a href={`tel:${PHONE_NUMBER}`}>
                         {PHONE_NUMBER}
@@ -41,33 +99,41 @@ function Footer() {
                     >
                         Instagram
                     </a>
+
                 </div>
 
                 <div className="footer-reservation">
-                    <span>RESERVATIONS</span>
+
+                    <span>
+                        {content[language].reservations}
+                    </span>
 
                     <h3>
-                        Join us by the sea.
+                        {content[language].reservationTitle}
                     </h3>
 
                     <a
                         href={`tel:${PHONE_NUMBER}`}
                         className="footer-reserve-button"
                     >
-                        Reserve a Table
+                        {content[language].reserve}
                     </a>
+
                 </div>
 
             </div>
 
             <div className="footer-bottom">
+
                 <p>
-                    © {new Date().getFullYear()} Miramar Seacoast.
-                    All rights reserved.
+                    © {new Date().getFullYear()} Miramar Seacoast.{" "}
+                    {content[language].rights}
                 </p>
+
             </div>
+
         </footer>
     );
 }
 
-export default Footer; 
+export default Footer;
