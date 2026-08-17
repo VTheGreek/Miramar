@@ -1,9 +1,15 @@
+/* ===========================
+   HERO
+=========================== */
+
 .hero {
     min-height: 100vh;
 
     display: flex;
     justify-content: center;
     align-items: center;
+
+    padding: 0 2rem;
 
     background-image: url("../assets/hero/miramar-bg.png");
     background-size: cover;
@@ -15,29 +21,46 @@
     text-align: center;
 
     color: white;
+
+    box-sizing: border-box;
 }
 
 .hero-content {
+    width: 100%;
     max-width: 700px;
 
     padding: 2rem;
+
+    box-sizing: border-box;
 }
 
 .hero-content h1 {
+    margin: 0 0 1rem;
+
     font-size: 4rem;
-    margin-bottom: 1rem;
+
+    line-height: 1.05;
+
+    overflow-wrap: break-word;
 }
 
 .hero-content p {
+    max-width: 650px;
+
+    margin: 0 auto 2rem;
+
     font-size: 1.2rem;
+
     line-height: 1.8;
-    margin-bottom: 2rem;
 }
 
 .hero-content a {
+    display: inline-block;
+
     text-decoration: none;
 
     background: white;
+
     color: #163A5F;
 
     padding: 1rem 2rem;
@@ -46,10 +69,89 @@
 
     font-weight: bold;
 
-    transition: .3s;
+    transition:
+        background 0.3s ease,
+        color 0.3s ease;
 }
 
 .hero-content a:hover {
     background: #163A5F;
+
     color: white;
+}
+
+
+/* ===========================
+   TABLET
+=========================== */
+
+@media (max-width: 768px) {
+
+    .hero {
+        padding: 0 1.5rem;
+    }
+
+    .hero-content {
+        max-width: 600px;
+
+        padding: 1rem;
+    }
+
+    .hero-content h1 {
+        font-size: 3.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+
+        line-height: 1.7;
+    }
+
+}
+
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media (max-width: 480px) {
+
+    .hero {
+        min-height: 100svh;
+
+        padding: 0 1.25rem;
+    }
+
+    .hero-content {
+        max-width: 100%;
+
+        padding: 0;
+    }
+
+    .hero-content h1 {
+        font-size: 3rem;
+
+        line-height: 1;
+
+        margin-bottom: 1.2rem;
+    }
+
+    .hero-content p {
+        max-width: 330px;
+
+        margin: 0 auto 2rem;
+
+        font-size: 0.95rem;
+
+        line-height: 1.6;
+    }
+
+    .hero-content a {
+        padding: 0.9rem 1.6rem;
+
+        font-size: 0.9rem;
+
+        white-space: nowrap;
+    }
+
 }

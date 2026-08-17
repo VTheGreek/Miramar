@@ -4,6 +4,7 @@
 
 .contact {
     display: grid;
+
     grid-template-columns: 1fr 1fr;
 
     min-height: 650px;
@@ -11,55 +12,67 @@
     background: #f7f3ec;
 }
 
+
 /* ===========================
    CONTENT
 =========================== */
 
 .contact-content {
     display: flex;
+
     flex-direction: column;
+
     justify-content: center;
 
     padding: 7rem 10%;
+
+    box-sizing: border-box;
 }
 
 .contact-subtitle {
+    margin-bottom: 1rem;
+
     font-family: "Inter", sans-serif;
+
     font-size: 0.8rem;
     font-weight: 500;
 
     letter-spacing: 0.3rem;
+
     text-transform: uppercase;
 
     color: #b08b57;
-
-    margin-bottom: 1rem;
 }
 
 .contact-title {
     max-width: 550px;
 
+    margin: 0 0 1.5rem;
+
     font-family: "Cormorant Garamond", serif;
+
     font-size: 3.5rem;
     font-weight: 500;
+
     line-height: 1.05;
 
     color: #0d2238;
-
-    margin: 0 0 1.5rem;
 }
 
 .contact-description {
     max-width: 550px;
 
+    margin: 0 0 3rem;
+
     font-family: "Inter", sans-serif;
+
     font-size: 1rem;
+
     line-height: 1.8;
 
     color: #646464;
-
-    margin-bottom: 3rem;
 }
+
 
 /* ===========================
    CONTACT DETAILS
@@ -67,6 +80,7 @@
 
 .contact-details {
     display: grid;
+
     grid-template-columns: repeat(3, 1fr);
 
     gap: 2rem;
@@ -76,17 +90,22 @@
 
 .contact-details div {
     display: flex;
+
     flex-direction: column;
 
     gap: 0.4rem;
+
+    min-width: 0;
 }
 
 .contact-details span {
     font-family: "Inter", sans-serif;
+
     font-size: 0.75rem;
     font-weight: 600;
 
     letter-spacing: 0.12rem;
+
     text-transform: uppercase;
 
     color: #b08b57;
@@ -94,14 +113,17 @@
 
 .contact-details p,
 .contact-details a {
+    margin: 0;
+
     font-family: "Inter", sans-serif;
+
     font-size: 0.9rem;
 
     color: #0d2238;
 
     text-decoration: none;
 
-    margin: 0;
+    overflow-wrap: break-word;
 }
 
 .contact-details a {
@@ -111,6 +133,7 @@
 .contact-details a:hover {
     color: #b08b57;
 }
+
 
 /* ===========================
    RESERVATION BUTTON
@@ -124,6 +147,7 @@
     padding: 1rem 2.2rem;
 
     border: 1px solid #0d2238;
+
     border-radius: 999px;
 
     background: #0d2238;
@@ -131,12 +155,15 @@
     color: white;
 
     font-family: "Inter", sans-serif;
+
     font-size: 0.9rem;
     font-weight: 500;
 
     letter-spacing: 0.05rem;
 
     text-decoration: none;
+
+    white-space: nowrap;
 
     transition:
         background 0.3s ease,
@@ -145,8 +172,10 @@
 
 .contact-reserve:hover {
     background: transparent;
+
     color: #0d2238;
 }
+
 
 /* ===========================
    MAP
@@ -154,6 +183,7 @@
 
 .contact-map {
     width: 100%;
+
     min-height: 650px;
 
     background: #0d2238;
@@ -163,6 +193,7 @@
     display: block;
 
     width: 100%;
+
     height: 100%;
 
     min-height: 650px;
@@ -171,6 +202,7 @@
 
     filter: saturate(0.8) contrast(0.95);
 }
+
 
 /* ===========================
    TABLET
@@ -184,6 +216,25 @@
 
     .contact-content {
         padding: 6rem 8%;
+
+        text-align: center;
+
+        align-items: center;
+    }
+
+    .contact-title,
+    .contact-description {
+        max-width: 700px;
+    }
+
+    .contact-details {
+        width: 100%;
+
+        max-width: 700px;
+    }
+
+    .contact-reserve {
+        align-self: center;
     }
 
     .contact-map,
@@ -192,6 +243,7 @@
     }
 }
 
+
 /* ===========================
    MOBILE
 =========================== */
@@ -199,21 +251,99 @@
 @media (max-width: 576px) {
 
     .contact-content {
-        padding: 5rem 1.5rem;
+        padding: 5rem 1.25rem;
+
+        text-align: center;
+    }
+
+    .contact-subtitle {
+        font-size: 0.75rem;
+
+        letter-spacing: 0.25rem;
+
+        margin-bottom: 0.8rem;
     }
 
     .contact-title {
+        max-width: 100%;
+
         font-size: 2.5rem;
+
+        line-height: 1.05;
+
+        margin-bottom: 1.2rem;
+    }
+
+    .contact-description {
+        max-width: 100%;
+
+        font-size: 0.9rem;
+
+        line-height: 1.7;
+
+        margin-bottom: 2.5rem;
     }
 
     .contact-details {
         grid-template-columns: 1fr;
 
         gap: 1.5rem;
+
+        width: 100%;
+
+        margin-bottom: 2.5rem;
+    }
+
+    .contact-details div {
+        align-items: center;
+    }
+
+    .contact-details span {
+        font-size: 0.7rem;
+
+        letter-spacing: 0.1rem;
+    }
+
+    .contact-details p,
+    .contact-details a {
+        font-size: 0.9rem;
+    }
+
+    .contact-reserve {
+        align-self: center;
+
+        padding: 0.9rem 1.8rem;
+
+        font-size: 0.9rem;
     }
 
     .contact-map,
     .contact-map iframe {
         min-height: 350px;
+    }
+}
+
+
+/* ===========================
+   SMALL MOBILE
+=========================== */
+
+@media (max-width: 400px) {
+
+    .contact-content {
+        padding: 4.5rem 1rem;
+    }
+
+    .contact-title {
+        font-size: 2.25rem;
+    }
+
+    .contact-description {
+        font-size: 0.88rem;
+    }
+
+    .contact-map,
+    .contact-map iframe {
+        min-height: 320px;
     }
 }
