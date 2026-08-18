@@ -52,7 +52,7 @@ function Footer() {
                 <div className="footer-brand">
 
                     <Link to="/">
-                        <h2>MIRAMAR</h2>
+                        <h2>MIRAMÁR</h2>
                         <span>SEACOAST</span>
                     </Link>
 
@@ -126,7 +126,7 @@ function Footer() {
             <div className="footer-bottom">
 
                 <p>
-                    © {new Date().getFullYear()} Miramar Seacoast.{" "}
+                    © {new Date().getFullYear()} Miramár Seacoast.{" "}
                     {content[language].rights}
                 </p>
 

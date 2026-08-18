@@ -69,8 +69,17 @@ function Navbar() {
 
             {/* Brand */}
 
-            <Link to="/" className="navbar-brand">
-                <h1>MIRAMAR</h1>
+            <Link
+                to="/"
+                className="navbar-brand"
+                onClick={() => {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: "smooth",
+                    });
+                }}
+            >
+                <h1>MIRAMÁR</h1>
                 <span>SEACOAST</span>
             </Link>
 
@@ -82,10 +91,20 @@ function Navbar() {
                 {navLinks.map((link) => (
                     <li key={link.label}>
 
-                        {/* Route */}
+                        {/* Home / Route */}
 
                         {link.kind === "route" && (
-                            <Link to={link.to}>
+                            <Link
+                                to={link.to}
+                                onClick={() => {
+                                    if (link.to === "/") {
+                                        window.scrollTo({
+                                            top: 0,
+                                            behavior: "smooth",
+                                        });
+                                    }
+                                }}
+                            >
                                 {link.label}
                             </Link>
                         )}
@@ -108,7 +127,9 @@ function Navbar() {
                                 <button
                                     type="button"
                                     className="navbar-dropdown-button"
-                                    onClick={() => setMenuOpen(!menuOpen)}
+                                    onClick={() =>
+                                        setMenuOpen(!menuOpen)
+                                    }
                                 >
                                     {link.label}
 
@@ -169,7 +190,9 @@ function Navbar() {
                 className={`navbar-toggle ${
                     mobileMenuOpen ? "open" : ""
                 }`}
-                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                onClick={() =>
+                    setMobileMenuOpen(!mobileMenuOpen)
+                }
                 aria-label={
                     mobileMenuOpen
                         ? "Close navigation"
@@ -205,35 +228,65 @@ function Navbar() {
             {mobileMenuOpen && (
                 <div className="mobile-menu">
 
+                    {/* Home */}
+
                     <Link
                         to="/"
-                        onClick={() => setMobileMenuOpen(false)}
+                        onClick={() => {
+                            setMobileMenuOpen(false);
+
+                            window.scrollTo({
+                                top: 0,
+                                behavior: "smooth",
+                            });
+                        }}
                     >
                         {content[language].home}
                     </Link>
 
+
+                    {/* Gallery */}
+
                     <a
                         href="#gallery"
-                        onClick={() => setMobileMenuOpen(false)}
+                        onClick={() =>
+                            setMobileMenuOpen(false)
+                        }
                     >
                         {content[language].gallery}
                     </a>
 
+
+                    {/* Contact */}
+
                     <a
                         href="#contact"
-                        onClick={() => setMobileMenuOpen(false)}
+                        onClick={() =>
+                            setMobileMenuOpen(false)
+                        }
                     >
                         {content[language].contact}
                     </a>
 
+
+                    {/* Divider */}
+
                     <div className="mobile-menu-divider"></div>
 
+
+                    {/* Language */}
+
                     <LanguageSwitcher />
+
+
+                    {/* Reservation */}
 
                     <a
                         href={`tel:${PHONE_NUMBER}`}
                         className="mobile-menu-reserve"
-                        onClick={() => setMobileMenuOpen(false)}
+                        onClick={() =>
+                            setMobileMenuOpen(false)
+                        }
                     >
                         {content[language].reserve}
                     </a>

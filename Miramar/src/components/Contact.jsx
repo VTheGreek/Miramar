@@ -10,7 +10,7 @@ function Contact() {
             subtitle: "VISIT US",
             title: "Your table by the sea awaits.",
             description:
-                "Join us at Miramar Seacoast for Mediterranean flavors, refreshing cocktails and unforgettable moments by the sea.",
+                "Join us at Miramár Seacoast for Mediterranean flavors, refreshing cocktails and unforgettable moments by the sea.",
             location: "Location",
             reservations: "Reservations",
             instagram: "Instagram",
@@ -21,7 +21,7 @@ function Contact() {
             subtitle: "ΕΠΙΣΚΕΦΘΕΙΤΕ ΜΑΣ",
             title: "Το τραπέζι σας δίπλα στη θάλασσα σας περιμένει.",
             description:
-                "Ελάτε στο Miramar Seacoast και απολαύστε μεσογειακές γεύσεις, δροσιστικά cocktails και αξέχαστες στιγμές δίπλα στη θάλασσα.",
+                "Ελάτε στο Miramár Seacoast και απολαύστε μεσογειακές γεύσεις, δροσιστικά cocktails και αξέχαστες στιγμές δίπλα στη θάλασσα.",
             location: "Τοποθεσία",
             reservations: "Κρατήσεις",
             instagram: "Instagram",
@@ -54,7 +54,7 @@ function Contact() {
                         </span>
 
                         <p>
-                            Miramar Seacoast
+                            Miramár Seacoast
                         </p>
                     </div>
 

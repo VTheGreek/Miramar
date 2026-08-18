@@ -6,14 +6,14 @@ function Hero() {
 
     const content = {
         en: {
-            title: "Experience Miramar",
+            title: "Experience Miramár",
             description:
                 "Fresh Mediterranean cuisine, handcrafted cocktails, and unforgettable seaside moments.",
             button: "Reserve a Table",
         },
 
         gr: {
-            title: "Ζήστε την εμπειρία του Miramar",
+            title: "Ζήστε την εμπειρία του Miramár",
             description:
                 "Φρέσκια μεσογειακή κουζίνα, signature cocktails και αξέχαστες στιγμές δίπλα στη θάλασσα.",
             button: "Κάντε κράτηση",
