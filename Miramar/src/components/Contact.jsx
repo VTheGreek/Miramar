@@ -54,7 +54,7 @@ function Contact() {
                         </span>
 
                         <p>
-                            Miramár Seacoast
+                            Ierissos, Halkidikis
                         </p>
                     </div>
 
