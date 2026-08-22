@@ -28,6 +28,7 @@ function Navbar() {
         en: {
             home: "Home",
             gallery: "Gallery",
+            atmosphere: "Atmosphere",
             menu: "Menu",
             contact: "Contact",
             reserve: "Reserve a Table",
@@ -36,6 +37,7 @@ function Navbar() {
         gr: {
             home: "Αρχική",
             gallery: "Gallery",
+            atmosphere: "Ατμόσφαιρα",
             menu: "Μενού",
             contact: "Επικοινωνία",
             reserve: "Κάντε κράτηση",
@@ -48,15 +50,24 @@ function Navbar() {
             to: "/",
             kind: "route",
         },
+
         {
             label: content[language].gallery,
             to: "#gallery",
             kind: "scroll",
         },
+
+        {
+            label: content[language].atmosphere,
+            to: "#atmosphere",
+            kind: "scroll",
+        },
+
         {
             label: content[language].menu,
             kind: "dropdown",
         },
+
         {
             label: content[language].contact,
             to: "#contact",
@@ -64,19 +75,30 @@ function Navbar() {
         },
     ];
 
+    const closeMobileMenu = () => {
+        setMobileMenuOpen(false);
+    };
+
+    const goToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+        });
+    };
+
     return (
         <nav className={`navbar ${scrolled ? "navbar-scrolled" : ""}`}>
 
-            {/* Brand */}
+            {/* ===========================
+                BRAND
+            =========================== */}
 
             <Link
                 to="/"
                 className="navbar-brand"
                 onClick={() => {
-                    window.scrollTo({
-                        top: 0,
-                        behavior: "smooth",
-                    });
+                    closeMobileMenu();
+                    goToTop();
                 }}
             >
                 <h1>MIRAMÁR</h1>
@@ -84,24 +106,23 @@ function Navbar() {
             </Link>
 
 
-            {/* Desktop Navigation */}
+            {/* ===========================
+                DESKTOP NAVIGATION
+            =========================== */}
 
             <ul className="navbar-menu">
 
                 {navLinks.map((link) => (
                     <li key={link.label}>
 
-                        {/* Home / Route */}
+                        {/* Route */}
 
                         {link.kind === "route" && (
                             <Link
                                 to={link.to}
                                 onClick={() => {
                                     if (link.to === "/") {
-                                        window.scrollTo({
-                                            top: 0,
-                                            behavior: "smooth",
-                                        });
+                                        goToTop();
                                     }
                                 }}
                             >
@@ -183,7 +204,9 @@ function Navbar() {
             </ul>
 
 
-            {/* Mobile hamburger */}
+            {/* ===========================
+                MOBILE HAMBURGER
+            =========================== */}
 
             <button
                 type="button"
@@ -206,14 +229,18 @@ function Navbar() {
             </button>
 
 
-            {/* Desktop language switcher */}
+            {/* ===========================
+                DESKTOP LANGUAGE SWITCHER
+            =========================== */}
 
             <div className="navbar-language">
                 <LanguageSwitcher />
             </div>
 
 
-            {/* Desktop reservation */}
+            {/* ===========================
+                DESKTOP RESERVATION
+            =========================== */}
 
             <a
                 href={`tel:${PHONE_NUMBER}`}
@@ -223,7 +250,9 @@ function Navbar() {
             </a>
 
 
-            {/* Mobile menu */}
+            {/* ===========================
+                MOBILE MENU
+            =========================== */}
 
             {mobileMenuOpen && (
                 <div className="mobile-menu">
@@ -233,12 +262,8 @@ function Navbar() {
                     <Link
                         to="/"
                         onClick={() => {
-                            setMobileMenuOpen(false);
-
-                            window.scrollTo({
-                                top: 0,
-                                behavior: "smooth",
-                            });
+                            closeMobileMenu();
+                            goToTop();
                         }}
                     >
                         {content[language].home}
@@ -249,11 +274,19 @@ function Navbar() {
 
                     <a
                         href="#gallery"
-                        onClick={() =>
-                            setMobileMenuOpen(false)
-                        }
+                        onClick={closeMobileMenu}
                     >
                         {content[language].gallery}
+                    </a>
+
+
+                    {/* Atmosphere */}
+
+                    <a
+                        href="#atmosphere"
+                        onClick={closeMobileMenu}
+                    >
+                        {content[language].atmosphere}
                     </a>
 
 
@@ -261,9 +294,7 @@ function Navbar() {
 
                     <a
                         href="#contact"
-                        onClick={() =>
-                            setMobileMenuOpen(false)
-                        }
+                        onClick={closeMobileMenu}
                     >
                         {content[language].contact}
                     </a>
@@ -284,9 +315,7 @@ function Navbar() {
                     <a
                         href={`tel:${PHONE_NUMBER}`}
                         className="mobile-menu-reserve"
-                        onClick={() =>
-                            setMobileMenuOpen(false)
-                        }
+                        onClick={closeMobileMenu}
                     >
                         {content[language].reserve}
                     </a>

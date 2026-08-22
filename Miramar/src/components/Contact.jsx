@@ -10,22 +10,26 @@ function Contact() {
             subtitle: "VISIT US",
             title: "Your table by the sea awaits.",
             description:
-                "Join us at Miramár Seacoast for Mediterranean flavors, refreshing cocktails and unforgettable moments by the sea.",
+                "Join us at Miramár Seacoast in Ierissos, Halkidiki, for Mediterranean flavors, refreshing cocktails and unforgettable moments by the sea.",
             location: "Location",
+            locationValue: "Ierissos, Halkidiki",
             reservations: "Reservations",
             instagram: "Instagram",
             reserve: "Reserve a Table",
+            mapTitle: "Miramár Seacoast location in Ierissos, Halkidiki",
         },
 
         gr: {
             subtitle: "ΕΠΙΣΚΕΦΘΕΙΤΕ ΜΑΣ",
             title: "Το τραπέζι σας δίπλα στη θάλασσα σας περιμένει.",
             description:
-                "Ελάτε στο Miramár Seacoast και απολαύστε μεσογειακές γεύσεις, δροσιστικά cocktails και αξέχαστες στιγμές δίπλα στη θάλασσα.",
+                "Ελάτε στο Miramár Seacoast στην Ιερισσό Χαλκιδικής και απολαύστε μεσογειακές γεύσεις, δροσιστικά cocktails και αξέχαστες στιγμές δίπλα στη θάλασσα.",
             location: "Τοποθεσία",
+            locationValue: "Ιερισσός, Χαλκιδική",
             reservations: "Κρατήσεις",
             instagram: "Instagram",
             reserve: "Κάντε κράτηση",
+            mapTitle: "Τοποθεσία Miramár Seacoast στην Ιερισσό Χαλκιδικής",
         },
     };
 
@@ -54,7 +58,7 @@ function Contact() {
                         </span>
 
                         <p>
-                            Ierissos, Halkidikis
+                            {content[language].locationValue}
                         </p>
                     </div>
 
@@ -97,7 +101,7 @@ function Contact() {
 
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1043.6272382707434!2d23.877363587538294!3d40.40179225545166!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a8c5047598e723%3A0x27b7cabff1cf6c39!2sMiramar%20Seacoast!5e0!3m2!1sel!2sgr!4v1786027165022!5m2!1sel!2sgr"
-                    title="Miramar Seacoast location"
+                    title={content[language].mapTitle}
                     loading="lazy"
                     referrerPolicy="strict-origin-when-cross-origin"
                     allowFullScreen
