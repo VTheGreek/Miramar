@@ -1,66 +1,22 @@
-import menuData from "../data/menuData";
-import MenuItem from "../components/MenuItem";
 import "../styles/Menu.css";
 
 function Menu() {
     return (
         <main className="menu-page">
 
-            <header className="menu-header">
+            <iframe
+                src="/miramar-menu-2026.pdf"
+                title="Miramár Seacoast Menu"
+            />
 
-                <span>
-                    MIRAMAR SEACOAST
-                </span>
-
-                <h1>
-                    Our Menu
-                </h1>
-
-                <p>
-                    Mediterranean flavors, fresh ingredients
-                    and carefully crafted drinks.
-                </p>
-
-            </header>
-
-            <section
-                className="menu-section"
-                id="food"
+            <a
+                href="/miramar-menu-2026.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="menu-open-button"
             >
-
-                <h2>
-                    {menuData.allTimeMenu.title}
-                </h2>
-
-                {menuData.allTimeMenu.categories.map((category) => (
-
-                    <div
-                        className="menu-category"
-                        key={category.name}
-                    >
-
-                        <h3 className="menu-category-title">
-                            {category.name}
-                        </h3>
-
-                        <div className="menu-items">
-
-                            {category.items.map((item) => (
-
-                                <MenuItem
-                                    key={item.name}
-                                    item={item}
-                                />
-
-                            ))}
-
-                        </div>
-
-                    </div>
-
-                ))}
-
-            </section>
+                Open Menu
+            </a>
 
         </main>
     );

@@ -7,7 +7,6 @@ import LanguageSwitcher from "./LanguageSwitcher";
 
 function Navbar() {
     const [scrolled, setScrolled] = useState(false);
-    const [menuOpen, setMenuOpen] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
     const { language } = useLanguage();
@@ -44,37 +43,6 @@ function Navbar() {
         },
     };
 
-    const navLinks = [
-        {
-            label: content[language].home,
-            to: "/",
-            kind: "route",
-        },
-
-        {
-            label: content[language].gallery,
-            to: "#gallery",
-            kind: "scroll",
-        },
-
-        {
-            label: content[language].atmosphere,
-            to: "#atmosphere",
-            kind: "scroll",
-        },
-
-        {
-            label: content[language].menu,
-            kind: "dropdown",
-        },
-
-        {
-            label: content[language].contact,
-            to: "#contact",
-            kind: "scroll",
-        },
-    ];
-
     const closeMobileMenu = () => {
         setMobileMenuOpen(false);
     };
@@ -86,8 +54,16 @@ function Navbar() {
         });
     };
 
+    const openMenu = () => {
+        window.open("/miramar-menu-2026.pdf", "_blank");
+    };
+
     return (
-        <nav className={`navbar ${scrolled ? "navbar-scrolled" : ""}`}>
+        <nav
+            className={`navbar ${
+                scrolled ? "navbar-scrolled" : ""
+            }`}
+        >
 
             {/* ===========================
                 BRAND
@@ -112,94 +88,56 @@ function Navbar() {
 
             <ul className="navbar-menu">
 
-                {navLinks.map((link) => (
-                    <li key={link.label}>
+                {/* Home */}
 
-                        {/* Route */}
-
-                        {link.kind === "route" && (
-                            <Link
-                                to={link.to}
-                                onClick={() => {
-                                    if (link.to === "/") {
-                                        goToTop();
-                                    }
-                                }}
-                            >
-                                {link.label}
-                            </Link>
-                        )}
+                <li>
+                    <Link
+                        to="/"
+                        onClick={goToTop}
+                    >
+                        {content[language].home}
+                    </Link>
+                </li>
 
 
-                        {/* Scroll link */}
+                {/* Gallery */}
 
-                        {link.kind === "scroll" && (
-                            <a href={link.to}>
-                                {link.label}
-                            </a>
-                        )}
+                <li>
+                    <a href="#gallery">
+                        {content[language].gallery}
+                    </a>
+                </li>
 
 
-                        {/* Menu dropdown */}
+                {/* Atmosphere */}
 
-                        {link.kind === "dropdown" && (
-                            <div className="navbar-dropdown-wrapper">
+                <li>
+                    <a href="#atmosphere">
+                        {content[language].atmosphere}
+                    </a>
+                </li>
 
-                                <button
-                                    type="button"
-                                    className="navbar-dropdown-button"
-                                    onClick={() =>
-                                        setMenuOpen(!menuOpen)
-                                    }
-                                >
-                                    {link.label}
 
-                                    <span
-                                        className={
-                                            menuOpen
-                                                ? "arrow open"
-                                                : "arrow"
-                                        }
-                                    >
-                                        ⌄
-                                    </span>
-                                </button>
+                {/* Menu */}
 
-                                {menuOpen && (
-                                    <div className="navbar-dropdown">
+                <li>
+                    <button
+                        type="button"
+                        className="navbar-menu-link"
+                        onClick={openMenu}
+                    >
+                        {content[language].menu}
+                    </button>
+                </li>
 
-                                        <Link to="/menu#food">
-                                            Food
-                                        </Link>
 
-                                        <Link to="/menu#brunch">
-                                            Brunch
-                                        </Link>
+                {/* Contact */}
 
-                                        <Link to="/menu#coffee">
-                                            Coffee & Beverages
-                                        </Link>
-
-                                        <Link to="/menu#wines">
-                                            Wines
-                                        </Link>
-
-                                        <Link to="/menu#spirits">
-                                            Spirits
-                                        </Link>
-
-                                        <Link to="/menu#cocktails">
-                                            Signature Cocktails
-                                        </Link>
-
-                                    </div>
-                                )}
-
-                            </div>
-                        )}
-
-                    </li>
-                ))}
+                <li>
+                    <a href="#contact">
+                        {content[language].contact}
+                    </a>
+                </li>
 
             </ul>
 
@@ -288,6 +226,20 @@ function Navbar() {
                     >
                         {content[language].atmosphere}
                     </a>
+
+
+                    {/* Menu */}
+
+                    <button
+                        type="button"
+                        className="mobile-menu-link"
+                        onClick={() => {
+                            closeMobileMenu();
+                            openMenu();
+                        }}
+                    >
+                        {content[language].menu}
+                    </button>
 
 
                     {/* Contact */}
