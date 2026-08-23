@@ -100,20 +100,22 @@ function Navbar() {
                 </li>
 
 
-                {/* Gallery */}
-
-                <li>
-                    <a href="#gallery">
-                        {content[language].gallery}
-                    </a>
-                </li>
-
-
                 {/* Atmosphere */}
 
                 <li>
                     <a href="#atmosphere">
                         {content[language].atmosphere}
+                    </a>
+                </li>
+
+
+
+
+                {/* Gallery */}
+
+                <li>
+                    <a href="#gallery">
+                        {content[language].gallery}
                     </a>
                 </li>
 
