@@ -9,7 +9,7 @@ function About() {
     const content = {
         en: {
             subtitle: "OUR STORY",
-            title: "Mediterranean dining with breathtaking sea views.",
+            title: "Distinctive flavors with breathtaking sea views.",
             description:
                 "Located in Ierissos, Halkidiki, Miramár Seacoast offers an unforgettable dining experience where carefully crafted dishes meet handcrafted cocktails and panoramic views of the sea. Every dish is prepared with carefully selected ingredients, creating moments worth sharing with family and friends.",
             button: "Explore Our Menu",
@@ -18,7 +18,7 @@ function About() {
 
         gr: {
             subtitle: "Η ΙΣΤΟΡΙΑ ΜΑΣ",
-            title: "Μεσογειακή γαστρονομία με θέα που κόβει την ανάσα.",
+            title: "Ξεχωριστές γεύσεις με θέα που κόβει την ανάσα στη θάλασσα.",
             description:
                 "Στην Ιερισσό Χαλκιδικής, το Miramár Seacoast προσφέρει μια ξεχωριστή γαστρονομική εμπειρία, όπου προσεγμένα πιάτα συναντούν χειροποίητα cocktails και την πανοραμική θέα στη θάλασσα. Κάθε πιάτο δημιουργείται με προσεκτικά επιλεγμένα υλικά, προσφέροντας στιγμές που αξίζει να μοιραστείτε με την οικογένεια και τους φίλους σας.",
             button: "Ανακαλύψτε το Μενού",
