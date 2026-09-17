@@ -10,7 +10,7 @@ function Contact() {
             subtitle: "VISIT US",
             title: "Your table by the sea awaits.",
             description:
-                "Join us at Miramár Seacoast in Ierissos, Halkidiki, for Mediterranean flavors, refreshing cocktails and unforgettable moments by the sea.",
+                "Join us at Miramár Seacoast in Ierissos, Halkidiki, for distinctive flavors, handcrafted cocktails and unforgettable moments by the sea.",
             location: "Location",
             locationValue: "Ierissos, Halkidiki",
             reservations: "Reservations",
@@ -23,7 +23,7 @@ function Contact() {
             subtitle: "ΕΠΙΣΚΕΦΘΕΙΤΕ ΜΑΣ",
             title: "Το τραπέζι σας δίπλα στη θάλασσα σας περιμένει.",
             description:
-                "Ελάτε στο Miramár Seacoast στην Ιερισσό Χαλκιδικής και απολαύστε μεσογειακές γεύσεις, δροσιστικά cocktails και αξέχαστες στιγμές δίπλα στη θάλασσα.",
+                "Σας περιμένουμε στο Miramár Seacoast στην Ιερισσό Χαλκιδικής, για ξεχωριστές γεύσεις, χειροποίητα cocktails και αξέχαστες στιγμές δίπλα στη θάλασσα.",
             location: "Τοποθεσία",
             locationValue: "Ιερισσός, Χαλκιδική",
             reservations: "Κρατήσεις",

@@ -9,7 +9,7 @@ function Footer() {
     const content = {
         en: {
             description:
-                "Mediterranean flavors, handcrafted cocktails and unforgettable moments by the sea.",
+                "Join us at Miramár Seacoast in Ierissos, Halkidiki, for distinctive flavors, handcrafted cocktails and unforgettable moments by the sea.",
 
             explore: "Explore",
             story: "Our Story",
@@ -27,7 +27,7 @@ function Footer() {
 
         gr: {
             description:
-                "Μεσογειακές γεύσεις, signature cocktails και αξέχαστες στιγμές δίπλα στη θάλασσα.",
+                "Σας περιμένουμε στο Miramár Seacoast στην Ιερισσό Χαλκιδικής, για ξεχωριστές γεύσεις, χειροποίητα cocktails και αξέχαστες στιγμές δίπλα στη θάλασσα.",
 
             explore: "Εξερευνήστε",
             story: "Η Ιστορία μας",

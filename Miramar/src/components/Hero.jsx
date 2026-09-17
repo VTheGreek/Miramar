@@ -6,16 +6,16 @@ function Hero() {
 
     const content = {
         en: {
-            title: "Experience Miramár",
+            title: "EXPERIENCE MIRAMÁR",
             description:
-                "Mediterranean cuisine, handcrafted cocktails and unforgettable seaside moments in Ierissos.",
+                "Distinctive flavors, handcrafted cocktails and unforgettable seaside moments in Ierissos.",
             button: "Reserve a Table",
         },
 
         gr: {
-            title: "Ζήστε την εμπειρία του Miramár",
+            title: "ΖΗΣΤΕ ΤΗΝ ΕΜΠΕΙΡΙΑ ΤΟΥ MIRAMÁR",
             description:
-                "Μεσογειακή κουζίνα, signature cocktails και αξέχαστες στιγμές δίπλα στη θάλασσα στην Ιερισσό.",
+                "Ξεχωριστές γεύσεις, χειροποίητα cocktails και αξέχαστες στιγμές δίπλα στη θάλασσα στην Ιερισσό.",
             button: "Κάντε κράτηση",
         },
     };

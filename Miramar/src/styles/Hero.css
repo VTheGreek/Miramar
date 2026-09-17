@@ -38,7 +38,9 @@
     margin: 0 0 1rem;
 
     font-size: 4rem;
-
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 400;
+    letter-spacing: 0.15rem;
     line-height: 1.05;
 
     overflow-wrap: break-word;
