@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useLanguage } from "../context/LanguageContext";
-import aboutImage from "../assets/about/About.png";
+import aboutImage from "../assets/images/About.webp";
 import "../styles/About.css";
 
 function About() {
