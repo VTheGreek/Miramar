@@ -66,6 +66,8 @@ function Gallery() {
                         <img
                             src={image}
                             alt={`Miramar gallery ${index + 1}`}
+                            loading="lazy"
+                            decoding="async"
                         />
 
                     </div>

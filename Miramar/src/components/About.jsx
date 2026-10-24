@@ -57,6 +57,8 @@ function About() {
                 <img
                     src={aboutImage}
                     alt={content[language].imageAlt}
+                    loading="lazy"
+                    decoding="async"
                 />
 
             </div>

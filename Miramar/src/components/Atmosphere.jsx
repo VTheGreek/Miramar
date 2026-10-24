@@ -3,6 +3,8 @@ import "../styles/Atmosphere.css";
 
 import atmosphereVideo1 from "../assets/atmosphere/miramar-1-compressed.mp4";
 import atmosphereVideo2 from "../assets/atmosphere/miramar-2-compressed.mp4";
+import poster1 from "../assets/atmosphere/miramar-1-poster.webp";
+import poster2 from "../assets/atmosphere/miramar-2-poster.webp";
 
 function Atmosphere() {
     const { language } = useLanguage();
@@ -57,9 +59,10 @@ function Atmosphere() {
 
                     <video
                         src={atmosphereVideo1}
+                        poster={poster1}
                         controls
                         playsInline
-                        preload="metadata"
+                        preload="none"
                     />
 
                 </div>
@@ -69,9 +72,10 @@ function Atmosphere() {
 
                     <video
                         src={atmosphereVideo2}
+                        poster={poster2}
                         controls
                         playsInline
-                        preload="metadata"
+                        preload="none"
                     />
 
                 </div>
