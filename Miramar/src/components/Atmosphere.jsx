@@ -1,8 +1,8 @@
 import { useLanguage } from "../context/LanguageContext";
 import "../styles/Atmosphere.css";
 
-import atmosphereVideo1 from "../assets/atmosphere/miramar-1.mp4";
-import atmosphereVideo2 from "../assets/atmosphere/miramar-2.mp4";
+import atmosphereVideo1 from "../assets/atmosphere/miramar-1-compressed.mp4";
+import atmosphereVideo2 from "../assets/atmosphere/miramar-2-compressed.mp4";
 
 function Atmosphere() {
     const { language } = useLanguage();
