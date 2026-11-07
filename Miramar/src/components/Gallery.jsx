@@ -1,3 +1,5 @@
+import { useRef } from "react";
+
 import "../styles/Gallery.css";
 import { useLanguage } from "../context/LanguageContext";
 
@@ -8,8 +10,13 @@ import gallery4 from "../assets/images/gallery4.webp";
 import gallery5 from "../assets/images/gallery5.webp";
 import gallery6 from "../assets/images/gallery6.webp";
 
+import { Swiper, SwiperSlide } from "swiper/react";
+
+import "swiper/css";
+
 function Gallery() {
     const { language } = useLanguage();
+    const swiperRef = useRef(null);
 
     const content = {
         en: {
@@ -37,11 +44,7 @@ function Gallery() {
     ];
 
     return (
-        <section
-            className="gallery"
-            id="gallery"
-        >
-
+        <section className="gallery" id="gallery">
             <span className="gallery-subtitle">
                 {content[language].subtitle}
             </span>
@@ -54,28 +57,63 @@ function Gallery() {
                 {content[language].description}
             </p>
 
-            <div className="gallery-grid">
+            <div className="gallery-carousel-wrapper">
+                <button
+                    className="gallery-arrow gallery-arrow-prev"
+                    aria-label="Previous images"
+                    type="button"
+                    onClick={() => swiperRef.current?.slidePrev()}
+                >
+                    &#8592;
+                </button>
 
-                {galleryImages.map((image, index) => (
+                <Swiper
+                    onSwiper={(swiper) => {
+                        swiperRef.current = swiper;
+                    }}
+                    slidesPerView={3}
+                    spaceBetween={32}
+                    grabCursor={true}
+                    watchOverflow={true}
+                    breakpoints={{
+                        0: {
+                            slidesPerView: 1,
+                            spaceBetween: 20,
+                        },
+                        577: {
+                            slidesPerView: 2,
+                            spaceBetween: 24,
+                        },
+                        993: {
+                            slidesPerView: 3,
+                            spaceBetween: 32,
+                        },
+                    }}
+                    className="gallery-grid"
+                >
+                    {galleryImages.map((image, index) => (
+                        <SwiperSlide key={index}>
+                            <div className="gallery-card">
+                                <img
+                                    src={image}
+                                    alt={`Miramar gallery ${index + 1}`}
+                                    loading="lazy"
+                                    decoding="async"
+                                />
+                            </div>
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
 
-                    <div
-                        className="gallery-card"
-                        key={index}
-                    >
-
-                        <img
-                            src={image}
-                            alt={`Miramar gallery ${index + 1}`}
-                            loading="lazy"
-                            decoding="async"
-                        />
-
-                    </div>
-
-                ))}
-
+                <button
+                    className="gallery-arrow gallery-arrow-next"
+                    aria-label="Next images"
+                    type="button"
+                    onClick={() => swiperRef.current?.slideNext()}
+                >
+                    &#8594;
+                </button>
             </div>
-
         </section>
     );
 }
