@@ -9,22 +9,18 @@ function Hero() {
             title: "EXPERIENCE MIRAMÁR",
             description:
                 "Distinctive flavors, handcrafted cocktails and unforgettable seaside moments in Ierissos.",
-            button: "Reserve a Table",
         },
 
         gr: {
             title: "ΖΗΣΤΕ ΤΗΝ ΕΜΠΕΙΡΙΑ ΤΟΥ MIRAMÁR",
             description:
                 "Ξεχωριστές γεύσεις, χειροποίητα cocktails και αξέχαστες στιγμές δίπλα στη θάλασσα στην Ιερισσό.",
-            button: "Κάντε κράτηση",
         },
     };
 
     return (
         <section className="hero">
-
             <div className="hero-content">
-
                 <h1>
                     {content[language].title}
                 </h1>
@@ -32,13 +28,7 @@ function Hero() {
                 <p>
                     {content[language].description}
                 </p>
-
-                <a href="tel:+306948969004">
-                    {content[language].button}
-                </a>
-
             </div>
-
         </section>
     );
 }
