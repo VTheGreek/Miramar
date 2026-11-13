@@ -34,11 +34,11 @@ function Navbar() {
         },
 
         gr: {
-            home: "Αρχική",
+            home: "Αρχικη",
             gallery: "Gallery",
-            atmosphere: "Ατμόσφαιρα",
-            menu: "Μενού",
-            contact: "Επικοινωνία",
+            atmosphere: "Ατμοσφαιρα",
+            menu: "Μενου",
+            contact: "Επικοινωνια",
             reserve: "Κάντε κράτηση",
         },
     };
