@@ -1,3 +1,5 @@
+import { useRef } from "react";
+
 import { useLanguage } from "../context/LanguageContext";
 import "../styles/Atmosphere.css";
 
@@ -7,17 +9,16 @@ import atmosphereVideo2 from "../assets/atmosphere/miramar-2-compressed.mp4";
 import poster1 from "../assets/atmosphere/miramar-1-poster.webp";
 import poster2 from "../assets/atmosphere/miramar-2-poster.webp";
 
-import { useRef } from "react";
-
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper/modules";
+import { EffectCoverflow } from "swiper/modules";
 
 import "swiper/css";
-import "swiper/css/pagination";
+import "swiper/css/effect-coverflow";
 
 function Atmosphere() {
     const { language } = useLanguage();
-    const swiperRef = useRef(null);
+
+    const mobileSwiperRef = useRef(null);
 
     const content = {
         en: {
@@ -62,43 +63,66 @@ function Atmosphere() {
                 </p>
             </div>
 
-            <div className="atmosphere-carousel-wrapper">
+            {/* DESKTOP VIDEO GALLERY */}
+
+            <div className="atmosphere-desktop">
+                <div className="atmosphere-video-grid">
+                    {videos.map((video, index) => (
+                        <div
+                            className="atmosphere-video"
+                            key={index}
+                        >
+                            <video
+                                src={video.src}
+                                poster={video.poster}
+                                controls
+                                playsInline
+                                preload="none"
+                            />
+                        </div>
+                    ))}
+                </div>
+            </div>
+
+            {/* TABLET AND MOBILE COVERFLOW */}
+
+            <div className="atmosphere-coverflow-wrapper">
                 <button
-                    className="atmosphere-arrow atmosphere-arrow-prev"
+                    className="atmosphere-arrow atmosphere-coverflow-prev"
                     type="button"
                     aria-label="Previous video"
-                    onClick={() => swiperRef.current?.slidePrev()}
+                    onClick={() =>
+                        mobileSwiperRef.current?.slidePrev()
+                    }
                 >
-                    &#8592;
+                    ←
                 </button>
 
                 <Swiper
+                    modules={[EffectCoverflow]}
                     onSwiper={(swiper) => {
-                        swiperRef.current = swiper;
+                        mobileSwiperRef.current = swiper;
                     }}
-                    modules={[Pagination]}
-                    pagination={{
-                        clickable: true,
-                    }}
-                    slidesPerView={2}
-                    spaceBetween={32}
+                    effect="coverflow"
+                    centeredSlides={true}
+                    slidesPerView={1.5}
+                    spaceBetween={10}
                     grabCursor={true}
                     watchOverflow={true}
+                    coverflowEffect={{
+                        rotate: 0,
+                        stretch: 0,
+                        depth: 150,
+                        modifier: 1.5,
+                        slideShadows: false,
+                    }}
                     breakpoints={{
-                        0: {
-                            slidesPerView: 1,
+                        577: {
+                            slidesPerView: 1.7,
                             spaceBetween: 20,
                         },
-                        577: {
-                            slidesPerView: 2,
-                            spaceBetween: 24,
-                        },
-                        993: {
-                            slidesPerView: 2,
-                            spaceBetween: 32,
-                        },
                     }}
-                    className="atmosphere-swiper"
+                    className="atmosphere-coverflow"
                 >
                     {videos.map((video, index) => (
                         <SwiperSlide key={index}>
@@ -116,12 +140,14 @@ function Atmosphere() {
                 </Swiper>
 
                 <button
-                    className="atmosphere-arrow atmosphere-arrow-next"
+                    className="atmosphere-arrow atmosphere-coverflow-next"
                     type="button"
                     aria-label="Next video"
-                    onClick={() => swiperRef.current?.slideNext()}
+                    onClick={() =>
+                        mobileSwiperRef.current?.slideNext()
+                    }
                 >
-                    &#8594;
+                    →
                 </button>
             </div>
         </section>
